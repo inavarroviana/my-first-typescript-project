@@ -1,9 +1,7 @@
 import { useState } from "react";
-import AppNoTSC from "./AppNoTSC";
-import AppTSC from "./AppTSC";
 import "./App.css";
 
-function App() {
+function AppNoTSC() {
   const [toDos, setToDos] = useState([]);
 
   function handleSubmit(event) {
@@ -29,11 +27,21 @@ function App() {
   }
 
   return (
-    <div className="appDisplay">
-      <AppNoTSC />
-      <AppTSC />
-    </div>
+    <main className="App">
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="toDo" />
+        <button type="submit">Add</button>
+      </form>
+      <ul>
+        {toDos.map((toDo, index) => (
+          <li key={index} className={toDo.completed ? "handleToggle" : ""}>
+            <span onClick={() => handleToggle(toDo.id)}>{toDo.text}</span>
+            <button onClick={() => handleDelete(toDo.id)}>X</button>
+          </li>
+        ))}
+      </ul>
+    </main>
   );
 }
 
-export default App;
+export default AppNoTSC;

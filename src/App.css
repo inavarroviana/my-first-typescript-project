@@ -11,6 +11,12 @@
   text-decoration: line-through;
 }
 
+.appDisplay {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,17 +41,12 @@
 body {
   display: grid;
   place-items: center;
-  min-width: 320px;
   min-height: 100vh;
 }
 
 .main {
   display: flex;
   font-display: auto;
-}
-
-.li {
-  text-align: center;
 }
 
 @keyframes App-logo-spin {
