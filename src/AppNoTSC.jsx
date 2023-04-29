@@ -34,7 +34,7 @@ function AppNoTSC() {
       </form>
       <ul>
         {toDos.map((toDo, index) => (
-          <li key={index} className={toDo.completed ? "handleToggle" : ""}>
+          <li key={toDo.id} className={toDo.completed ? "handleToggle" : ""}>
             <span onClick={() => handleToggle(toDo.id)}>{toDo.text}</span>
             <button onClick={() => handleDelete(toDo.id)}>X</button>
           </li>
